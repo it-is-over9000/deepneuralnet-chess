@@ -82,7 +82,7 @@ def example_serving_input_fn():
   )
   features = {
       key: tf.expand_dims(tensor, -1)
-      for key, tensor in feature_scalars.iteritems()
+      for key, tensor in feature_scalars.items()
   }
   return tf.contrib.learn.InputFnOps(
       features,
@@ -99,7 +99,7 @@ def json_serving_input_fn():
 
   features = {
       key: tf.expand_dims(tensor, -1)
-      for key, tensor in inputs.iteritems()
+      for key, tensor in inputs.items()
   }
   return tf.contrib.learn.InputFnOps(features, None, inputs)
 
